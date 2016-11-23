@@ -119,7 +119,7 @@ namespace BookService.Controllers
         }
 
         // DELETE: api/Books/5
-        [ResponseType(typeof(BookDTO))]
+        [ResponseType(typeof(Book))]
         public async Task<IHttpActionResult> DeleteBook(int id)
         {
             Book book = await db.Books.FindAsync(id);
@@ -131,18 +131,7 @@ namespace BookService.Controllers
             db.Books.Remove(book);
             await db.SaveChangesAsync();
 
-            // New code
-            // Load author name
-            db.Entry(book).Reference(x => x.Author).Load();
-
-            var dto = new BookDTO()
-            {
-                Id = book.Id,
-                Title = book.Title,
-                AuthorName = book.Author.Name
-            };
-
-            return Ok(dto);
+            return Ok(book);
         }
 
         protected override void Dispose(bool disposing)
