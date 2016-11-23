@@ -139,6 +139,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="index.html" />
+    <Content Include="Src\app.html" />
+    <Content Include="Src\app.js" />
+    <Content Include="Src\books.html" />
+    <Content Include="Src\books.js" />
+    <Content Include="Src\start.html" />
+    <Content Include="Src\start.js" />
+    <Content Include="style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,1 @@
+module.exports = require("npm:fetch-polyfill@0.8.2/fetch.js");
